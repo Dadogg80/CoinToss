@@ -26,12 +26,12 @@ contract("CoinToss", async function(accounts) {
     it ("Should not allow a non-owner to use payOutBetAmount function", async function() {
         let instance = await CoinToss.new();
         await instance.placeBet(1, 0, {from: accounts[1], value: web3.utils.toWei("1", "ether")});
-        await truffleAssert.fails(instance.payOutBetAmount({from: accounts[1]}), truffleAssert.ErrorType.REVERT);
+        await truffleAssert.fails(instance.payOutBetAmount({from: accounts[0]}), truffleAssert.ErrorType.REVERT);
     });
     it ("Should allow a owner to use payOutBetAmount function", async () => {
         let instance = await CoinToss.new();
         await instance.placeBet(1, 0, {from: accounts[1], value: web3.utils.toWei("1", "ether")});
-        await truffleAssert.passes(instance.payOutBetAmount({from: accounts[0]}));
+        await truffleAssert.passes(instance.payOutBetAmount({from: accounts[1]}));
     });
 
     /*  UnitTesting the payOutToBalance function  */

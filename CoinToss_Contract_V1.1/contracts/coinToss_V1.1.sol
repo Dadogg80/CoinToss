@@ -8,6 +8,7 @@ contract CoinToss is Ownable {
     // Creates a Bet that contains id, playerBet and playerChoice
 
         uint id;
+        address playerAddress;
         uint playerBet;
         uint playerChoice;
     }
@@ -21,6 +22,11 @@ contract CoinToss is Ownable {
     //
     address[] private creators;
 
+    modifier onlyBetOwner(){
+        require(msg.sender == bets[msg.sender].playerAddress);
+        _;
+    }
+
     /*  PUBLIC FUNCTIONS  */
     function placeBet(uint playerBet, uint playerChoice) public payable {
         /* function makes a call to metaMask and signs for the transaction of the playerBet */
@@ -29,6 +35,7 @@ contract CoinToss is Ownable {
         betAmount += msg.value;
 
         Bet memory newBet;
+        newBet.playerAddress = msg.sender;
         newBet.playerBet = playerBet;
         newBet.playerChoice = playerChoice;
 
@@ -69,7 +76,7 @@ contract CoinToss is Ownable {
         }
     }
 
-    function payOutBetAmount() public payable onlyOwner returns(uint) {
+    function payOutBetAmount() public payable onlyBetOwner returns(uint) {
        // Transfer the betAmount to the owner of the Bet.
 
         uint toPayOut = betAmount;
