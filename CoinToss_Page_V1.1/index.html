@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CoinToss</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./web3.min.js"></script>
+    <script type="text/javascript" src="./abi.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!--
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+-->
+    <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+
+  </head>
+  <body>
+      <!--Header -->
+        <div class="container">
+          
+          <h1 class="top-heading">TOSS MY COINS!</h1>
+          <h2><p class="bottom-heading">The Ethereum CoinToss Game</p><h2>
+        </div>
+
+      <!-- Gameplay -->
+        <div class="container">
+            <br>
+         <div>
+          <h4>PLACE YOUR BETS!!</h4>
+          <div class="input-group mb-3">
+            <input type="number" class="form-control" id="bet_input" placeholder="Bet">
+            <input type="string" class="form-control" id="choice_input" placeholder="0 Head,1 Tail">
+            <button type="button" id="placeBet_button" class="btn btn-primary">Place Bet</button>
+          </div>
+          <br>
+          <button type="button" id="play_button" class="btn btn-primary">FLIP COIN</button>
+          </div>
+        </div>
+
+    <br>
+    <!-- Results -->
+<div class="container">
+    <div>
+      <h2>WINNER OR LOSER?</h2>
+      <div>
+        <h4>Results :  <span id="bet_output"></span></h4>
+    </div>
+    </div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  -->
+  </body>
+</html>
