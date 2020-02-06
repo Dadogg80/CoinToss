@@ -4,7 +4,7 @@ var contractInstance;
 // jQuery function enables communication between JavaScript, Metamask and the blockchain.
 $(document).ready(function() {
   window.ethereum.enable().then(function(accounts) {
-    contractInstance = new web3.eth.Contract(abi, "0xf87cDBb0558428582C7E335Ea3D23AeB3d95DcaB", {from: accounts[0]});
+    contractInstance = new web3.eth.Contract(abi, "0xDD511D12171641Bb94e1d937dd25A12E8312A816", {from: accounts[0]});
     console.log(contractInstance);
   });
   $("#placeBet_button").click(betInputData);

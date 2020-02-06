@@ -20,9 +20,10 @@ contract CoinToss is Ownable {
 
     mapping(address => Bet) private bets;
     //
-    address[] private creators;
+    address[] private players;
+    //
 
-    modifier onlyBetOwner(){
+    modifier onlyBetOwner() {
         require(msg.sender == bets[msg.sender].playerAddress);
         _;
     }
@@ -40,7 +41,7 @@ contract CoinToss is Ownable {
         newBet.playerChoice = playerChoice;
 
         insertBet(newBet);
-        creators.push(msg.sender);
+        players.push(msg.sender);
 
         assert(
             keccak256(
@@ -101,8 +102,8 @@ contract CoinToss is Ownable {
     }
 
     function insertBet(Bet memory newBet) private {
-        address creator = msg.sender;
-        bets[creator] = newBet;
+        address player = msg.sender;
+        bets[player] = newBet;
     }
 
 
